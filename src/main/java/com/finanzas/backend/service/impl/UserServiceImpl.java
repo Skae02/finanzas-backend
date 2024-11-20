@@ -49,8 +49,8 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public List<User> findByFirstName(String firstName) throws Exception {
-        return userRepository.findByFirstName(firstName);
+    public List<User> findByCompanyName(String companyName) throws Exception {
+        return userRepository.findByCompanyName(companyName);
     }
 
     @Override

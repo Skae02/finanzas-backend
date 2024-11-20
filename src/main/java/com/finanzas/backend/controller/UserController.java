@@ -72,16 +72,16 @@ public class UserController {
     }
 
 
-    @GetMapping(value = "/searchByFirstName/{firstName}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Search User by First Name", notes = "Method for find a User by first name")
+    @GetMapping(value = "/searchByCompanyName/{companyName}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Search User by Company Name", notes = "Method for find a User by Company Name")
     @ApiResponses({
-            @ApiResponse(code = 200, message = "User found by First Name"),
+            @ApiResponse(code = 200, message = "User found by CompanyName"),
             @ApiResponse(code = 404, message = "User Not Found"),
             @ApiResponse(code = 501, message = "Internal Server Error")
     })
-    public ResponseEntity<List<User>>findByFirstName (@PathVariable ("firstName") String firstName){
+    public ResponseEntity<List<User>>findByCompanyName (@PathVariable ("companyName") String companyName){
         try {
-            List<User> users = userService.findByFirstName(firstName);
+            List<User> users = userService.findByCompanyName(companyName);
             if(users.size()>0)
                 return new ResponseEntity<>(users, HttpStatus.OK);
             else

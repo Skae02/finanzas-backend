@@ -13,7 +13,7 @@ public class MappingConfiguration {
     }
 
     @Bean
-    public DocumentMapper documentMapperMapper() {
+    public DocumentMapper documentMapper() {
         return new DocumentMapper();
     }
 
